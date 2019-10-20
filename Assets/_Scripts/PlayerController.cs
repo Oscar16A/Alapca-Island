@@ -9,18 +9,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 400f;
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private Transform horizontalCheck;
-    [SerializeField] private bool airControl = false;
     public InputMaster controls;
     [SerializeField] public Rigidbody2D rb;
 
+    Animator animator;
     private bool isTouchingTile;
     public bool isFacingRight = true;
     
     private Vector3 m_Velocity = Vector3.zero;
     private void Awake() 
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -31,9 +30,13 @@ public class PlayerController : MonoBehaviour
         controls.Player.Jump.performed += ctx => Jump();
     }
 
-    void Update() {
+    void Update() 
+    {
         isTouchingTile = Physics2D.OverlapArea(new Vector2 (transform.position.x - 0.5f, transform.position.y),
             new Vector2 (transform.position.x + 0.5f, transform.position.y - 0.51f), groundLayer);
+                    
+        animator.SetFloat("Horizontal", rb.velocity.x);
+        animator.SetFloat("Vertical", rb.velocity.y);
     }
     public void Move(Vector2 direction) 
     {
