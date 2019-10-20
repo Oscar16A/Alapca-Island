@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3556683917201959603}
   - component: {fileID: 3556683917201959604}
-  - component: {fileID: 3556683917201959606}
   - component: {fileID: 3556683917201959602}
   - component: {fileID: 3556683917201959605}
-  - component: {fileID: 3556683917201959601}
   - component: {fileID: 3556683917201959600}
+  - component: {fileID: 3556683917201959601}
+  - component: {fileID: 8146945411453229443}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -84,18 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3556683917201959606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3556683917201959607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b96bf5a07115a604d9638833b465f725, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &3556683917201959602
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,22 +129,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3556683917201959601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3556683917201959607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e3f2543570f3d046bc4cef91ef5b65f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SoundToPlay: {fileID: 8300000, guid: a974594ae684d7946a14382633eaa66e, type: 3}
-  Volume: 1
-  alreadyPlayed: 0
-  myAnimationController: {fileID: 3556683917201959605}
 --- !u!82 &3556683917201959600
 AudioSource:
   m_ObjectHideFlags: 0
@@ -253,3 +225,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3556683917201959601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3556683917201959607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e3f2543570f3d046bc4cef91ef5b65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAnimationController: {fileID: 3556683917201959605}
+--- !u!114 &8146945411453229443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3556683917201959607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4dfc7c9ac413ab4581937d6ed839058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundToPlay: {fileID: 8300000, guid: a974594ae684d7946a14382633eaa66e, type: 3}
+  Volume: 1
+  alreadyPlayed: 0
