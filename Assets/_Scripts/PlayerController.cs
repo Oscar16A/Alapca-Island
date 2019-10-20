@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class controller : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,11 +15,4 @@ public class controller : MonoBehaviour
     {
         
     }
-
-    void FixedUpdate() 
-    {
-        
-    }
-
-    
 }
