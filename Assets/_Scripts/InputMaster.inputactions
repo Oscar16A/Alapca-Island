@@ -19,10 +19,20 @@
                     "name": "Jump",
                     "id": "e2babc01-974f-45d7-8920-45140ef08af1",
                     "expectedControlLayout": "",
-                    "continuous": false,
+                    "continuous": true,
                     "passThrough": false,
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
+                    "bindings": []
+                },
+                {
+                    "name": "TapJump",
+                    "id": "07349646-2560-44a1-bb50-0586fe367196",
+                    "expectedControlLayout": "",
+                    "continuous": true,
+                    "passThrough": false,
+                    "processors": "",
+                    "interactions": "Tap",
                     "bindings": []
                 }
             ],
@@ -94,6 +104,18 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TapJump",
                     "chainWithPrevious": false,
                     "isComposite": false,
                     "isPartOfComposite": false,

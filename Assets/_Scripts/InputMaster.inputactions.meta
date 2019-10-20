@@ -4,6 +4,7 @@ ScriptedImporter:
   fileIDToRecycleName:
     11400000: <root>
     11400002: Player/Movement
+    11400004: Player/TapJump
     11400008: Player/Jump
   externalObjects: {}
   userData: 
