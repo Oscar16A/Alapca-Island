@@ -1,15 +1,18 @@
 fileFormatVersion: 2
-guid: 1d12e705ccbb5774cb43f5499abd5658
+guid: 4221086c539322f4297220c07eea9e67
 TextureImporter:
   fileIDToRecycleName:
-    21300000: treasure chest_0
-    21300002: treasure chest_1
-    21300004: treasure chest_2
-    21300006: treasure chest_3
-    21300008: treasure chest_4
-    21300010: treasure chest_5
-    21300012: treasure chest_6
-    21300014: treasure chest_7
+    21300000: signs_0
+    21300002: signs_1
+    21300004: signs_2
+    21300006: signs_3
+    21300008: signs_4
+    21300010: signs_5
+    21300012: signs_6
+    21300014: signs_7
+    21300016: signs_8
+    21300018: signs_9
+    21300020: signs_10
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -53,7 +56,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -92,161 +95,221 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: treasure chest_0
+      name: signs_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 35
-        width: 35
-        height: 35
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c346ff52083ba0846938a083838057f3
+      spriteID: 8fda9c07ed1173d4fbc166aca891305c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: treasure chest_1
+      name: signs_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 35
-        width: 35
-        height: 35
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 443cf62d35e3f784e9e8aa8da3d43dfe
+      spriteID: 72b209c0f3148394cb6b5d809a032457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: treasure chest_2
+      name: signs_2
       rect:
         serializedVersion: 2
-        x: 70
-        y: 35
-        width: 35
-        height: 35
+        x: 32
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c193669fa104764182c2a628d80d418
+      spriteID: 888fdba1baaf7424fa77c92a42436f05
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: treasure chest_3
+      name: signs_3
       rect:
         serializedVersion: 2
-        x: 105
-        y: 35
-        width: 35
-        height: 35
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fb366eba9e47b84a85f3257c1704b3e
+      spriteID: acabce2b3dbee304983e443d10fb2945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: treasure chest_4
+      name: signs_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09730405ef251584e8f94a7eeef02c02
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: signs_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c4c3f15ff8ce9438a257b65dd39e69
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: signs_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2cf4fdd7b734d4c89ace1e582ce080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: signs_7
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 35
-        height: 35
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04be087985d18dc47977274a18dae204
+      spriteID: bc1d33f7a679dae4282da33202ce5acf
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: treasure chest_5
+      name: signs_8
       rect:
         serializedVersion: 2
-        x: 35
+        x: 16
         y: 0
-        width: 35
-        height: 35
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 186d53699cf0d204f9686e575bee85d2
+      spriteID: dd5589d833c58dd488ebb39ff3fad53b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: treasure chest_6
+      name: signs_9
       rect:
         serializedVersion: 2
-        x: 70
+        x: 32
         y: 0
-        width: 35
-        height: 35
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dec1abb648e274e40836cd055ed76fab
+      spriteID: fa7efe3ac33da9445aaab62ec196c949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: treasure chest_7
+      name: signs_10
       rect:
         serializedVersion: 2
-        x: 105
+        x: 48
         y: 0
-        width: 35
-        height: 35
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37064e9a5f549834e8ac186d39364165
+      spriteID: 86f76f34275600b4baaafc5479673eb3
       vertices: []
       indices: 
       edges: []
@@ -254,7 +317,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: bdd4a9141333a1540b580989cd25ad9f
+    spriteID: 161e429762dd36a4eb00bd796395fd57
     vertices: []
     indices: 
     edges: []

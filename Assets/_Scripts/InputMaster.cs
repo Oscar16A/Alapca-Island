@@ -22,6 +22,7 @@ public class InputMaster : InputActionAssetReference
         m_Player = asset.GetActionMap("Player");
         m_Player_Movement = m_Player.GetAction("Movement");
         m_Player_Jump = m_Player.GetAction("Jump");
+        m_Player_TapJump = m_Player.GetAction("TapJump");
         m_Initialized = true;
     }
     private void Uninitialize()
@@ -29,6 +30,7 @@ public class InputMaster : InputActionAssetReference
         m_Player = null;
         m_Player_Movement = null;
         m_Player_Jump = null;
+        m_Player_TapJump = null;
         m_Initialized = false;
     }
     public void SetAsset(InputActionAsset newAsset)
@@ -45,12 +47,14 @@ public class InputMaster : InputActionAssetReference
     private InputActionMap m_Player;
     private InputAction m_Player_Movement;
     private InputAction m_Player_Jump;
+    private InputAction m_Player_TapJump;
     public struct PlayerActions
     {
         private InputMaster m_Wrapper;
         public PlayerActions(InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement { get { return m_Wrapper.m_Player_Movement; } }
         public InputAction @Jump { get { return m_Wrapper.m_Player_Jump; } }
+        public InputAction @TapJump { get { return m_Wrapper.m_Player_TapJump; } }
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }

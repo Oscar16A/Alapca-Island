@@ -11,12 +11,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     public InputMaster controls;
     [SerializeField] public Rigidbody2D rb;
+    [SerializeField] private float jumpTimeCounter;
+    [SerializeField] private float jumpTime = 0.35f;
 
     Animator animator;
     private bool isTouchingTile;
+    private bool isJumping;
     public bool isFacingRight = true;
     
+    
     private Vector3 m_Velocity = Vector3.zero;
+
     private void Awake() 
     {
         animator = GetComponent<Animator>();
@@ -28,6 +33,7 @@ public class PlayerController : MonoBehaviour
         // controls = new InputMaster();
         controls.Player.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
         controls.Player.Jump.performed += ctx => Jump();
+        //controls.Player.TapJump.performed += ctx => TapJump();
     }
 
     void Update() 
@@ -37,6 +43,13 @@ public class PlayerController : MonoBehaviour
                     
         animator.SetFloat("Horizontal", rb.velocity.x);
         animator.SetFloat("Vertical", rb.velocity.y);
+
+        jumpTimeCounter -= Time.deltaTime;
+
+        if(rb.velocity.y < 0) 
+        {
+            isJumping = false;
+        }
     }
     public void Move(Vector2 direction) 
     {
@@ -57,9 +70,33 @@ public class PlayerController : MonoBehaviour
 
     public void Jump() 
     {
+        print("Jump");
         if (isTouchingTile && IsGrounded()) 
         {
-            rb.AddForce(new Vector2(0f, jumpForce));
+            isJumping = true;
+
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+
+        if(isJumping) {
+            if(jumpTimeCounter > 0)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                jumpTimeCounter -= Time.deltaTime;
+            }
+            else 
+            {
+                isJumping = false;
+            }
+        }
+    }
+
+    public void TapJump() 
+    {
+        print("Tap");
+        if (isTouchingTile && IsGrounded()) 
+        {
+            rb.AddForce(new Vector2(0f, jumpForce / 2.5f));
         }
     }
 
@@ -76,7 +113,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;
-        float distance = 1.0f;
+        float distance = 0.7f;
 
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
         if (hit.collider != null) 
