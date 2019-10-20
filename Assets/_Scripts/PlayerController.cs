@@ -5,7 +5,7 @@ using UnityEngine.Experimental.Input;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 1.1f;
+    [SerializeField] private float movementSpeed = .05f;
     [SerializeField] private float jumpForce = 400f;
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;
     [SerializeField] private LayerMask groundLayer;
@@ -15,9 +15,8 @@ public class PlayerController : MonoBehaviour
     public InputMaster controls;
     [SerializeField] public Rigidbody2D rb;
 
-    bool onAir = false;
-    private bool grounded;
-    public bool facingRightg = true;
+    private bool isGrounded;
+    public bool isFacingRight = true;
     
     private Vector3 m_Velocity = Vector3.zero;
     private void Awake() 
@@ -32,21 +31,40 @@ public class PlayerController : MonoBehaviour
         controls.Player.Jump.performed += ctx => Jump();
     }
 
-
+    void Update() {
+        isGrounded = Physics2D.OverlapArea(new Vector2 (transform.position.x - 0.5f, transform.position.y),
+            new Vector2 (transform.position.x + 0.5f, transform.position.y - 0.51f), groundLayer);
+    }
     public void Move(Vector2 direction) 
     {
-        rb.velocity = new Vector2(direction.x, rb.velocity.y);
+        rb.velocity = new Vector2(direction.x * movementSpeed, rb.velocity.y);
+
+        if (direction.x > 0 && !isFacingRight) 
+        {
+            Filp();
+        }
+        else if (direction.x < 0 && isFacingRight) 
+        {
+            Filp();
+        }
         // rb.AddForce(new Vector2(direction.x, 0));
     }
 
     public void Jump() 
     {
-        if (!onAir) 
+        if (isGrounded) 
         {
             rb.AddForce(new Vector2(0f, jumpForce));
-            onAir = true;
         }
-        // rb.velocity += Vector2.up * Physics2D.gravity.y * Time.deltaTime;
+    }
+
+    void Filp() 
+    {
+        isFacingRight = !isFacingRight;
+
+        Vector2 localScale = gameObject.transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 
     void OnEnable() 
