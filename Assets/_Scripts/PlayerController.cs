@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
         Vector2 direction = Vector2.down;
         float distance = 0.7f;
 
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x - .07f, transform.position.y), direction, distance, groundLayer);
         if (hit.collider != null) 
         {
             return true;
