@@ -247,7 +247,7 @@ PrefabInstance:
     - target: {fileID: 8706423583510840706, guid: deecc9cddcf6916488b518c0913fbfbc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8706423583510840706, guid: deecc9cddcf6916488b518c0913fbfbc,
         type: 3}
@@ -264,9 +264,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8706423583510840705, guid: deecc9cddcf6916488b518c0913fbfbc,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8706423583510840705, guid: deecc9cddcf6916488b518c0913fbfbc,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8706423583510840705, guid: deecc9cddcf6916488b518c0913fbfbc,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 9.8
+      objectReference: {fileID: 0}
     - target: {fileID: 568653020, guid: deecc9cddcf6916488b518c0913fbfbc, type: 3}
-      propertyPath: movementSpeed
-      value: 3
+      propertyPath: jumpForce
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deecc9cddcf6916488b518c0913fbfbc, type: 3}
@@ -320,7 +335,7 @@ PrefabInstance:
     - target: {fileID: 1458104317786528382, guid: d96de406d4e493c46b3a92264f8ecfbd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1458104317786528382, guid: d96de406d4e493c46b3a92264f8ecfbd,
         type: 3}
@@ -386,7 +401,7 @@ Transform:
   - {fileID: 1554512839}
   - {fileID: 1801191980}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1554512838
 GameObject:
