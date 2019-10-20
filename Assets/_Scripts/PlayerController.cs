@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public InputMaster controls;
     [SerializeField] public Rigidbody2D rb;
 
-    private bool isGrounded;
+    private bool isTouchingTile;
     public bool isFacingRight = true;
     
     private Vector3 m_Velocity = Vector3.zero;
@@ -32,11 +32,13 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update() {
-        isGrounded = Physics2D.OverlapArea(new Vector2 (transform.position.x - 0.5f, transform.position.y),
+        isTouchingTile = Physics2D.OverlapArea(new Vector2 (transform.position.x - 0.5f, transform.position.y),
             new Vector2 (transform.position.x + 0.5f, transform.position.y - 0.51f), groundLayer);
     }
     public void Move(Vector2 direction) 
     {
+        Vector3 targetVelocity = new Vector2(movementSpeed * 10f, rb.velocity.y);
+
         rb.velocity = new Vector2(direction.x * movementSpeed, rb.velocity.y);
 
         if (direction.x > 0 && !isFacingRight) 
@@ -52,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump() 
     {
-        if (isGrounded) 
+        if (isTouchingTile && IsGrounded()) 
         {
             rb.AddForce(new Vector2(0f, jumpForce));
         }
@@ -65,6 +67,20 @@ public class PlayerController : MonoBehaviour
         Vector2 localScale = gameObject.transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
+    }
+
+    bool IsGrounded() 
+    {
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.down;
+        float distance = 1.0f;
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null) 
+        {
+            return true;
+        }
+        return false;
     }
 
     void OnEnable() 
