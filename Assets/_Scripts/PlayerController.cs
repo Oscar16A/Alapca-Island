@@ -9,18 +9,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 400f;
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private Transform horizontalCheck;
-    [SerializeField] private bool airControl = false;
     public InputMaster controls;
     [SerializeField] public Rigidbody2D rb;
 
-    private bool isGrounded;
+    Animator animator;
+    private bool isTouchingTile;
     public bool isFacingRight = true;
     
     private Vector3 m_Velocity = Vector3.zero;
     private void Awake() 
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -31,12 +30,18 @@ public class PlayerController : MonoBehaviour
         controls.Player.Jump.performed += ctx => Jump();
     }
 
-    void Update() {
-        isGrounded = Physics2D.OverlapArea(new Vector2 (transform.position.x - 0.5f, transform.position.y),
+    void Update() 
+    {
+        isTouchingTile = Physics2D.OverlapArea(new Vector2 (transform.position.x - 0.5f, transform.position.y),
             new Vector2 (transform.position.x + 0.5f, transform.position.y - 0.51f), groundLayer);
+                    
+        animator.SetFloat("Horizontal", rb.velocity.x);
+        animator.SetFloat("Vertical", rb.velocity.y);
     }
     public void Move(Vector2 direction) 
     {
+        Vector3 targetVelocity = new Vector2(movementSpeed * 10f, rb.velocity.y);
+
         rb.velocity = new Vector2(direction.x * movementSpeed, rb.velocity.y);
 
         if (direction.x > 0 && !isFacingRight) 
@@ -52,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump() 
     {
-        if (isGrounded) 
+        if (isTouchingTile && IsGrounded()) 
         {
             rb.AddForce(new Vector2(0f, jumpForce));
         }
@@ -65,6 +70,20 @@ public class PlayerController : MonoBehaviour
         Vector2 localScale = gameObject.transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
+    }
+
+    bool IsGrounded() 
+    {
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.down;
+        float distance = 1.0f;
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null) 
+        {
+            return true;
+        }
+        return false;
     }
 
     void OnEnable() 
