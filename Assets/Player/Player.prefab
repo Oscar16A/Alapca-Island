@@ -127,7 +127,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
+<<<<<<< HEAD
   m_Mass: 0.1
+=======
+  m_Mass: 3
+>>>>>>> 70f2dec3324bee0718e0d707fcdacdac2c78ee91
   m_LinearDrag: 4
   m_AngularDrag: 14
   m_GravityScale: 14
@@ -187,8 +191,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8da95a7c88662498e0f170cb21ef2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   movementSpeed: 7
   jumpForce: 55
+=======
+  movementSpeed: 5
+  jumpForce: 50
+>>>>>>> 70f2dec3324bee0718e0d707fcdacdac2c78ee91
   m_MovementSmoothing: 0.05
   groundLayer:
     serializedVersion: 2
@@ -196,7 +205,11 @@ MonoBehaviour:
   controls:
     m_Asset: {fileID: 11400000, guid: 37205809eca5ae049a3c2386bedc14ff, type: 3}
   rb: {fileID: 8706423583510840705}
+<<<<<<< HEAD
   jumpTimeCounter: 0
+=======
+  jumpTimeCounter: 0.35
+>>>>>>> 70f2dec3324bee0718e0d707fcdacdac2c78ee91
   jumpTime: 0.35
   isFacingRight: 1
 --- !u!95 &1770687104
