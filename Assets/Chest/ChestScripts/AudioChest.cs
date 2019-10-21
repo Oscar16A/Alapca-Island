@@ -20,7 +20,7 @@ public class AudioChest : MonoBehaviour
         {
             audio1.PlayOneShot(SoundToPlay, Volume);
             alreadyPlayed = true;
-            ScoreChest.scoreValue += 1;
+           // /ScoreChest.scoreValue += 1;
         }
     }
 }

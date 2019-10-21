@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class endgame : MonoBehaviour
 {
-    BoxCollider2D bc = GameObject.GetComponent<BoxCollider2D>();
+    private void OnTriggerEnter(Collider other)
+    {
+        //if ()
+        //{ }
+    }
 
 }
