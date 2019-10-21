@@ -7,6 +7,7 @@ public class scene_manager : MonoBehaviour
 {
     public void PlayGame()
     {
+        Debug.Log("Play Level!");
         //SceneManager.LoadScene("Level");
     }
 
