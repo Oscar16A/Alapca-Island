@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ScoreChest : MonoBehaviour
 {
-    public int scoreValue = 0;
+    public static int scoreValue = 0;
     Text score;
     void Start()
     {
