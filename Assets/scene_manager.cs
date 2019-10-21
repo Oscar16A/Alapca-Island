@@ -7,7 +7,7 @@ public class scene_manager : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Level");
+        //SceneManager.LoadScene("Level");
     }
 
     public void QuitGame()
