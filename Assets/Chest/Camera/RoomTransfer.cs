@@ -10,7 +10,7 @@ public class RoomTransfer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //cam = Camera.main.GetComponent<CameraMovement>();
+        cam = Camera.main.GetComponent<CameraMovement>();
     }
 
     // Update is called once per frame

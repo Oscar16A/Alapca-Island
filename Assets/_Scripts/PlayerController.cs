@@ -18,8 +18,15 @@ public class PlayerController : MonoBehaviour
     private bool isTouchingTile;
     private bool isJumping;
     public bool isFacingRight = true;
-    
-    
+
+    //Audio shit
+    public AudioClip jumpSound;
+    public AudioClip walkSound;
+    public AudioSource audiojump;
+    public AudioSource audiowalk;
+    public float Volume;
+
+
     private Vector3 m_Velocity = Vector3.zero;
 
     private void Awake() 
@@ -73,6 +80,7 @@ public class PlayerController : MonoBehaviour
         print("Jump");
         if (isTouchingTile && IsGrounded()) 
         {
+            audiojump.PlayOneShot(jumpSound, Volume);
             isJumping = true;
 
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);

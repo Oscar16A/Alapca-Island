@@ -632,7 +632,10 @@ MonoBehaviour:
   fullText: There once was an alpaca who sought treasure.
   currentText: 
   dialogues:
-  - {fileID: 0}
+  - Treasure they found, but it wasn't enough.
+  - The Alpaca wanted more gold and riches and other stuff.
+  - And so they departed, sailing off to the sea
+  - Set on a life of adventure, treasure hunting, and piracy.
   charDelay: 0
   textbox: {fileID: 0}
 --- !u!114 &1992071434
