@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Level/Test Main Menu.unity
+    guid: 1de13daa51f4fdb47a7c2f665466f4da
+  - enabled: 1
+    path: Assets/Level/Beginning.unity
+    guid: c8e55fd9cae99184ea1000679432ed35
+  - enabled: 1
+    path: Assets/Level/Actual Level.unity
+    guid: 6f122d0b8fee2f847af133d61b122b82
+  - enabled: 1
+    path: Assets/Level/Homebound Ending.unity
+    guid: 92fa777921983bb46aea6884c297894f
+  - enabled: 1
+    path: Assets/Level/Pirate Ending.unity
+    guid: 2890cad4b066f504aa9e859b207b5886
   m_configObjects: {}
