@@ -12,6 +12,7 @@ public class TypeWriterEffect : MonoBehaviour
     public float delay = 0.1f;
     public string fullText;
     public string currentText = "";
+    public string transitionSceneTitle;
 
     [Header("Dialogue Stuff")]
     public string[] dialogues;
@@ -30,7 +31,7 @@ public class TypeWriterEffect : MonoBehaviour
 
         if (dialogueIndex == dialogues.Length) 
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(transitionSceneTitle);
         }
     }
 

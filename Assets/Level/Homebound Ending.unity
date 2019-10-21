@@ -631,6 +631,7 @@ MonoBehaviour:
   delay: 0.05
   fullText: There once was an alpaca who sought treasure.
   currentText: 
+  transitionSceneTitle: Test Main Menu
   dialogues:
   - Adventure they sought, and adventure they found.
   - And now, setting sail the Alpaca was homeward bound.
