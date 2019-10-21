@@ -11,7 +11,6 @@ public class TriggerChest : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             myAnimationController.SetBool("PlayerTouch", true);
-            
         }
     }
 }
