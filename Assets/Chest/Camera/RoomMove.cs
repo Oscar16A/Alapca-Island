@@ -9,7 +9,6 @@ public class RoomMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -18,11 +17,12 @@ public class RoomMove : MonoBehaviour
         
     }
 
-    public virtual void OnTriggerEnter2D(Collider2D other)
+    public virtual void OnTriggerStay2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
         {
             virtualCamera.SetActive(true);
+            
         }
     }
 
