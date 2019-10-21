@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+
 
 public class TypeWriterEffect : MonoBehaviour
 {
@@ -12,24 +14,23 @@ public class TypeWriterEffect : MonoBehaviour
     public string currentText = "";
 
     [Header("Dialogue Stuff")]
-    public TextMeshProUGUI[] dialogues;
+    public string[] dialogues;
     public float charDelay;
     private float timeToNextChar;
     private int dialogueIndex = -1;
     private int charIndex = -1;
     public TextMeshProUGUI textbox;
 
-
-    void Start() 
-    {
-        StartCoroutine(ShowText());
-    }
-
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)) 
         {
             NextLine();            
+        }
+
+        if (dialogueIndex == dialogues.Length) 
+        {
+            SceneManager.LoadScene(1);
         }
     }
 
@@ -47,5 +48,8 @@ public class TypeWriterEffect : MonoBehaviour
     {
         currentText = "";
         dialogueIndex++;
+        this.GetComponent<TextMeshProUGUI>().text = currentText;
+        fullText = dialogues[dialogueIndex];
+        StartCoroutine(ShowText());
     }
 }
