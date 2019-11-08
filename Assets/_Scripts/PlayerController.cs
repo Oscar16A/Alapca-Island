@@ -14,6 +14,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpTimeCounter;
     [SerializeField] private float jumpTime = 0.35f;
 
+    private SpriteRenderer spriteRenderer;
+    public GameObject groundCheck;
+    public BoxCollider2D boxCollider;
+
     Animator animator;
     private bool isTouchingTile;
     private bool isJumping;
@@ -33,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Start() 
@@ -53,6 +58,10 @@ public class PlayerController : MonoBehaviour
 
         jumpTimeCounter -= Time.deltaTime;
 
+        // float x = Input.GetAxis("Horizontal");
+        // Vector2 move = new Vector2(x * movementSpeed * Time.deltaTime, rb.velocity.y);
+        // rb.velocity = move;
+
         if(rb.velocity.y < 0) 
         {
             isJumping = false;
@@ -66,11 +75,11 @@ public class PlayerController : MonoBehaviour
 
         if (direction.x > 0 && !isFacingRight) 
         {
-            Filp();
+            Flip();
         }
         else if (direction.x < 0 && isFacingRight) 
         {
-            Filp();
+            Flip();
         }
         // rb.AddForce(new Vector2(direction.x, 0));
     }
@@ -108,22 +117,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Filp() 
+    void Flip() 
     {
         isFacingRight = !isFacingRight;
 
-        Vector2 localScale = gameObject.transform.localScale;
-        localScale.x *= -1;
-        transform.localScale = localScale;
+        Vector2 position = groundCheck.transform.localPosition;
+        position.x *= -1;
+        groundCheck.transform.localPosition = position;
+
+        boxCollider.offset = new Vector2(-boxCollider.offset.x, boxCollider.offset.y);
+
+        spriteRenderer.flipX = !spriteRenderer.flipX;
     }
 
     bool IsGrounded() 
     {
-        Vector2 position = transform.position;
+        Vector2 position = groundCheck.transform.position;
         Vector2 direction = Vector2.down;
         float distance = 0.7f;
 
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x - .07f, transform.position.y), direction, distance, groundLayer);
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
         if (hit.collider != null) 
         {
             return true;

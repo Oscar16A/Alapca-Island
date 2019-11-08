@@ -13,6 +13,6 @@ public class ScoreChest : MonoBehaviour
     
     void Update()
     {
-        score.text = "Score " + scoreValue;
+        score.text = "Chests: " + scoreValue;
     }
 }
